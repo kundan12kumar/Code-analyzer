@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #4F46E5; /* Primary buttons, active states - indigo-600 */
+  --color-primary-hover: #4338CA; /* Hover state for primary elements - indigo-700 */
+  --color-primary-light: #E0E7FF; /* Highlighted content backgrounds - indigo-100 */
+  
+  /* Neutral Colors - Light Mode */
+  --color-background-light: #FFFFFF; /* Main background light mode - white */
+  --color-surface-light: #F9FAFB; /* Card backgrounds light mode - gray-50 */
+  --color-border-light: #E5E7EB; /* Subtle borders light mode - gray-200 */
+  --color-text-primary-light: #111827; /* Primary text light mode - gray-900 */
+  --color-text-secondary-light: #4B5563; /* Secondary text light mode - gray-600 */
+  
+  /* Neutral Colors - Dark Mode */
+  --color-background-dark: #111827; /* Main background dark mode - gray-900 */
+  --color-surface-dark: #1F2937; /* Card backgrounds dark mode - gray-800 */
+  --color-border-dark: #374151; /* Subtle borders dark mode - gray-700 */
+  --color-text-primary-dark: #F9FAFB; /* Primary text dark mode - gray-50 */
+  --color-text-secondary-dark: #9CA3AF; /* Secondary text dark mode - gray-400 */
+  
+  /* Semantic Colors */
+  --color-success: #10B981; /* Success states - emerald-500 */
+  --color-warning: #F59E0B; /* Warning states - amber-500 */
+  --color-error: #F43F5E; /* Error states - rose-500 */
+  --color-info: #0EA5E9; /* Informational states - sky-500 */
+  
+  /* Code Syntax Colors */
+  --color-code-syntax-1: #38BDF8; /* Code keywords - sky-400 */
+  --color-code-syntax-2: #FCD34D; /* Code strings - amber-300 */
+  --color-code-syntax-3: #34D399; /* Code comments - emerald-400 */
+  --color-code-syntax-4: #FB7185; /* Code functions - rose-400 */
+  
+  /* Code Editor Colors */
+  --color-code-bg-light: #F8F9FC; /* Code background light */
+  --color-code-bg-dark: #1A1D2A; /* Code background dark */
+  --color-editor-bg-light: #FFFFFF; /* Editor background light */
+  --color-editor-bg-dark: #1E1E1E; /* Editor background dark */
+  --color-editor-gutter-light: #F1F5F9; /* Editor gutter light */
+  --color-editor-gutter-dark: #252526; /* Editor gutter dark */
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  body {
+    @apply bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-primary-light dark:text-text-primary-dark font-medium px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-ghost {
+    @apply text-text-primary-light dark:text-text-primary-dark font-medium px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg p-6 shadow-sm;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-border-light dark:border-border-dark rounded-lg bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark placeholder-text-secondary-light dark:placeholder-text-secondary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200;
+  }
+}
